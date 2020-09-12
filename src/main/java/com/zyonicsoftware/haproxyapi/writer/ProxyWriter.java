@@ -17,7 +17,7 @@ public class ProxyWriter {
 
         String content = this.getContent(proxyName, destinationAlias, configFile);
 
-        if(content.contains(":" + inputPort + "#") || content.contains(":" + destinationPort + "#")) {
+        if(content.contains(":" + inputPort + "#") || content.contains(":" + destinationPort)) {
             return false;
         }
 
@@ -30,7 +30,7 @@ public class ProxyWriter {
                 "backend " + proxyName + "\n" +
                         "\tmode " + mode + "\n" +
                         "\ttimeout server " + serverTimeout + "\n" +
-                        "\tserver main " + this.haProxyAPI.getIpAlias().getIpAdress(destinationAlias) + ":" + destinationPort +"#";
+                        "\tserver main " + this.haProxyAPI.getIpAlias().getIpAdress(destinationAlias) + ":" + destinationPort + " " + argument + " #";
 
         FileWriter fileWriter = new FileWriter(configFile);
 
