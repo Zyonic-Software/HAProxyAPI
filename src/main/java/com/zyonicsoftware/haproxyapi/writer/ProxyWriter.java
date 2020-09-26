@@ -17,7 +17,7 @@ public class ProxyWriter {
 
         String content = this.getContent(proxyName, destinationAlias, configFile);
 
-        if(content.contains(":" + inputPort + "#") || content.contains(":" + destinationPort)) {
+        if(content.contains(":" + inputPort + "#")) {
             return false;
         }
 

@@ -41,7 +41,7 @@ public class RestApiInterface {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("{ \"status\" : \"key invalid \" }");
         }
 
-        return ResponseEntity.status(HttpStatus.OK).body("{ \"handled\" : true }");
+        return ResponseEntity.status(HttpStatus.OK).body("{ \"status\" : handled }");
     }
 
     @PostMapping("/haproxy/api/deleteproxy")
@@ -58,7 +58,7 @@ public class RestApiInterface {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("{ \"status\" : \"key invalid \" }");
         }
 
-        return ResponseEntity.status(HttpStatus.OK).body("{ \"handled\" : true }");
+        return ResponseEntity.status(HttpStatus.OK).body("{ \"status\" : handled }");
     }
 
     @GetMapping("/haproxy/api/getproxys")
